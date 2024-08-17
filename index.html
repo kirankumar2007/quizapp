@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Quiz App</title>
+    <title>Enhanced Quiz App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="quiz-container">
         <div id="quiz">
-            <h2 id="question">Question Text</h2>
+            <div id="qui
+            z-header">
+                <h2 id="question">Question Text</h2>
+                <p id="question-number">Question <span id="current-question">1</span> of <span id="total-questions">3</span></p>
+            </div>
             <div class="options">
-                <label>
+                <label class="option">
                     <input type="radio" name="answer" class="answer" id="a" value="a">
                     <span id="a_text">Answer A</span>
                 </label>
-                <label>
+                <label class="option">
                     <input type="radio" name="answer" class="answer" id="b" value="b">
                     <span id="b_text">Answer B</span>
                 </label>
-                <label>
+                <label class="option">
                     <input type="radio" name="answer" class="answer" id="c" value="c">
                     <span id="c_text">Answer C</span>
                 </label>
-                <label>
+                <label class="option">
                     <input type="radio" name="answer" class="answer" id="d" value="d">
                     <span id="d_text">Answer D</span>
                 </label>
