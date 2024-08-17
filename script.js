@@ -24,12 +24,44 @@ const quizData = [
         correct: "b"
     },
     {
-        question: "Who is director of Bahubali",
+        question: "Who is the director of Bahubali?",
         a: "Rajamouli",
-        b: "ar rahman",
-        c: "koratala siva",
-        d: "sanjay leela bansali",
+        b: "AR Rahman",
+        c: "Koratala Siva",
+        d: "Sanjay Leela Bhansali",
         correct: "a"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        a: "Earth",
+        b: "Mars",
+        c: "Jupiter",
+        d: "Saturn",
+        correct: "b"
+    },
+    {
+        question: "What is the capital of Australia?",
+        a: "Sydney",
+        b: "Melbourne",
+        c: "Canberra",
+        d: "Perth",
+        correct: "c"
+    },
+    {
+        question: "Who wrote the epic 'Mahabharata'?",
+        a: "Valmiki",
+        b: "Ved Vyasa",
+        c: "Kalidasa",
+        d: "Tulsidas",
+        correct: "b"
+    },
+    {
+        question: "Which is the smallest ocean in the world?",
+        a: "Indian Ocean",
+        b: "Pacific Ocean",
+        c: "Atlantic Ocean",
+        d: "Arctic Ocean",
+        correct: "d"
     }
 ];
 
@@ -66,7 +98,7 @@ function loadQuiz() {
 function deselectAnswers() {
     answerEls.forEach(answerEl => {
         answerEl.checked = false;
-        answerEl.parentElement.classList.remove("selected");
+        answerEl.parentElement.classList.remove("selected", "correct", "incorrect");
     });
 }
 
@@ -90,7 +122,6 @@ answerEls.forEach(answerEl => {
 submitBtn.addEventListener("click", () => {
     const answer = getSelected();
     
-    console.log(document.getElementById("answer"));
     if(answer) {
         const correctAnswer = quizData[currentQuiz].correct;
 
@@ -110,7 +141,6 @@ submitBtn.addEventListener("click", () => {
 
         setTimeout(() => {
             if(currentQuiz < quizData.length) {
-                console.log(20);
                 loadQuiz();
             } else {
                 quiz.innerHTML = `
