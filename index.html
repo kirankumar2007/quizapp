@@ -11,10 +11,16 @@
         <h1>Welcome to the Quiz App</h1>
     </header>
     <div class="quiz-container">
+        <div id="progress-container" class="progress-container">
+            <div id="progressBarFull" class="progress-bar-full"></div>
+        </div>
+        <p id="progressText" class="progress-text"></p>
+        <p id="question-counter" class="question-counter">Question 1 of 3</p>
+        
         <div id="quiz">
             <div id="quiz-header">
                 <h2 id="question">Question Text</h2>
-                <p id="question-number">Question <span id="current-question">1</span> of <span id="total-questions">8</span></p>
+                <!-- <p id="question-number">Question <span id="current-question">1</span> of <span id="total-questions">8</span></p> -->
             </div>
             <div class="options">
                 <label class="option">

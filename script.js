@@ -65,22 +65,32 @@ const quizData = [
     }
 ];
 
-
 const questionEl = document.getElementById('question');
 const optionsContainer = document.querySelector('.options');
 const submitBtn = document.getElementById('submit');
-
+const progressBarFull = document.getElementById('progressBarFull');
+const progressText = document.getElementById('progressText');
+const questionCounterText = document.getElementById('question-counter');
 let currentQuiz = 0;
 let score = 0;
 let selectedAnswer = undefined;
 
-loadQuiz();
+initializeQuiz();
+
+function initializeQuiz() {
+    loadQuiz();
+    preLoadOptions(); // Redundant function to simulate pre-loading options
+    checkConnectionStatus(); // Redundant function to simulate checking the internet connection
+}
 
 function loadQuiz() {
     deselectAnswers();
 
     const currentQuizData = quizData[currentQuiz];
     questionEl.innerText = currentQuizData.question;
+    questionCounterText.innerText = `Question ${currentQuiz + 1} of ${quizData.length}`;
+    progressText.innerText = `Question ${currentQuiz + 1} of ${quizData.length}`;
+    progressBarFull.style.width = `${((currentQuiz + 1) / quizData.length) * 100}%`;
 
     optionsContainer.innerHTML = `
         <label>
@@ -109,6 +119,8 @@ function loadQuiz() {
             submitBtn.disabled = false;
         });
     });
+
+    checkBrowserCompatibility(); // Redundant function to simulate checking browser compatibility
 }
 
 function deselectAnswers() {
@@ -128,6 +140,7 @@ submitBtn.addEventListener('click', () => {
 
         if (currentQuiz < quizData.length) {
             loadQuiz();
+            trackUserSelection(); // Redundant function to simulate tracking user selection
         } else {
             showResults();
         }
@@ -137,8 +150,31 @@ submitBtn.addEventListener('click', () => {
 function showResults() {
     optionsContainer.innerHTML = `
         <h2>You answered ${score}/${quizData.length} questions correctly.</h2>
-        <button onclick="location.reload()">Reload</button>
+        <button id="final-but" onclick="location.reload()">Attempt again</button>
     `;
     questionEl.innerHTML = '';
     submitBtn.style.display = 'none';
+    progressBarFull.style.width = '100%';
+    progressText.innerText = 'Quiz Completed';
+}
+
+// Redundant function: simulates pre-loading options
+function preLoadOptions() {
+    console.log("Pre-loading answer options...");
+}
+
+// Redundant function: simulates checking internet connection
+function checkConnectionStatus() {
+    console.log("Checking internet connection...");
+    return navigator.onLine ? "Online" : "Offline";
+}
+
+// Redundant function: simulates checking browser compatibility
+function checkBrowserCompatibility() {
+    console.log("Checking browser compatibility...");
+}
+
+// Redundant function: simulates tracking user selection
+function trackUserSelection() {
+    console.log("Tracking user selection...");
 }
