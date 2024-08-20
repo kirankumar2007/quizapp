@@ -18,7 +18,7 @@ You can try out the Quiz App by visiting the following link:
 
 ### Online
 
-1. Visit the [Live Demo](https://kirankumar2007.github.io/Maze-Game/).
+1. Visit the [Live Demo](https://kirankumar2007.github.io/quizapp/).
 2. Click on the "Start Quiz" button to begin.
 3. Select the correct answer from the options provided.
 4. After answering all questions, your score will be displayed.
