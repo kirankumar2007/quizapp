@@ -39,4 +39,4 @@ If you'd like to run the project locally:
 
 4. The quiz will be loaded and you can start answering in it
 
-![demo video](https://drive.google.com/file/d/1QSnRR0WyO5dvLzfhhCZ72wIH4zKugHmn/view?usp=drive_link)
+[Demo Video](https://drive.google.com/file/d/1QSnRR0WyO5dvLzfhhCZ72wIH4zKugHmn/view?usp=drive_link)
